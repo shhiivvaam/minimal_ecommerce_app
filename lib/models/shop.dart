@@ -9,7 +9,8 @@ class Shop extends ChangeNotifier {
       name: "Watch",
       price: 99.9,
       description: "Nice and Cool Watch",
-      imagePath: 'assets/glasses.png'),
+      imagePath: 'assets/glasses.png',
+    ),
     // product 2
     Product(
       name: "Hoodie",
