@@ -18,17 +18,17 @@ class IntroPage extends StatelessWidget {
               size: 72,
               color: Theme.of(context).colorScheme.inversePrimary,
             ),
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
 
             // title
-            Text(
+            const Text(
               "Minimal Shop",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 24,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
 
             // subtitle
             Text(
@@ -37,12 +37,12 @@ class IntroPage extends StatelessWidget {
                 color: Theme.of(context).colorScheme.inversePrimary,
               ),
             ),
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
 
             // button
             MyButton(
               onTap: () => Navigator.pushNamed(context, '/shop_page'),
-              child: Icon(
+              child: const Icon(
                 Icons.arrow_forward,
               ),
             ),

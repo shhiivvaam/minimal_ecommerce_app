@@ -6,44 +6,48 @@ class Shop extends ChangeNotifier {
   final List<Product> _shop = [
     // product 1
     Product(
-      name: "Product 1",
+      name: "Watch",
       price: 99.9,
-      description: "Product 1 Description",
-    ),
+      description: "Nice and Cool Watch",
+      imagePath: 'assets/glasses.png'),
     // product 2
     Product(
-      name: "Product 2",
+      name: "Hoodie",
       price: 199.9,
-      description: "Product 2 Description",
+      description: "Nice and Cool Hoodie",
+      imagePath: 'assets/hoodie.png',
     ),
     // product 3
     Product(
-      name: "Product 3",
+      name: "Glasses",
       price: 299.9,
-      description: "Product 3 Description",
+      description: "Nice and cool Glasses",
+      imagePath: 'assets/watch.png',
     ),
     // product 4
     Product(
-      name: "Product 4",
+      name: "Shoes",
       price: 399.9,
-      description: "Product 4 Description",
+      description: "Nice and cool Shoes",
+      imagePath: 'assets/shoes.png',
     ),
     // product 5
     Product(
-      name: "Product 5",
+      name: "Watch",
       price: 499.9,
-      description: "Product 5 Description",
+      description: "Nice and Cool Watch",
+      imagePath: 'assets/glasses.png',
     ),
   ];
 
   // user cart
-  List<Product> _cart = [];
+  final List<Product> _cart = [];
 
   // get Product List
   List<Product> get shop => _shop;
 
   // get user cart
-  List<Product> get cart => cart;
+  List<Product> get cart => _cart;
 
   // add items to cart
   void addToCart(Product item) {

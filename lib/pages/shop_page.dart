@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:minimal_ecommerce_app/components/my_drawer.dart';
 import 'package:minimal_ecommerce_app/components/my_product_tile.dart';
@@ -16,12 +14,21 @@ class ShopPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shop Page'),
+        title: const Text('Shop Page'),
         backgroundColor: Colors.transparent,
         elevation: 0,
         foregroundColor: Theme.of(context).colorScheme.inversePrimary,
+        actions: [
+          // go to cart button
+          IconButton(
+            icon: const Icon(Icons.shopping_cart_outlined),
+            onPressed: () {
+              Navigator.pushNamed(context, '/cart_page');
+            },
+          ),
+        ],
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       backgroundColor: Theme.of(context).colorScheme.background,
       body: ListView(
         children: [
@@ -48,7 +55,7 @@ class ShopPage extends StatelessWidget {
                 // return as a product tile UI
                 return MyProductTile(product: product);
               },
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
             ),
           ),
         ],

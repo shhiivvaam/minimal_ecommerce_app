@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:minimal_ecommerce_app/models/product.dart';
 import 'package:minimal_ecommerce_app/models/shop.dart';
 import 'package:provider/provider.dart';
@@ -15,12 +14,12 @@ class MyProductTile extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        content: Text('Add this item to your cart?'),
+        content: const Text('Add this item to your cart?'),
         actions: [
           // cancel buttom
           MaterialButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
 
           // yes -> confirm buttom
@@ -31,7 +30,7 @@ class MyProductTile extends StatelessWidget {
               // add to cart
               context.read<Shop>().addToCart(product);
             },
-            child: Text('Yes'),
+            child: const Text('Yes'),
           )
         ],
       ),
@@ -45,37 +44,33 @@ class MyProductTile extends StatelessWidget {
         color: Theme.of(context).colorScheme.primary,
         borderRadius: BorderRadius.circular(12),
       ),
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(25),
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(25),
       width: 300,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // product image
-          // TODO: will be doing the image part later
           Column(
             children: [
               AspectRatio(
                 aspectRatio: 1,
                 child: Container(
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.secondary,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Icon(
-                    Icons.favorite,
-                  ),
-                  width: double.infinity,
-                  padding: EdgeInsets.all(25),
-                ),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.secondary,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(25),
+                    child: Image.asset(product.imagePath)),
               ),
               const SizedBox(height: 25),
 
               // product name
               Text(
                 product.name,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
@@ -98,7 +93,7 @@ class MyProductTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // product price
-              Text('\$' + product.price.toStringAsFixed(2)),
+              Text('\$${product.price.toStringAsFixed(2)}'),
 
               // add to the cart button
               Container(
@@ -108,7 +103,7 @@ class MyProductTile extends StatelessWidget {
                 ),
                 child: IconButton(
                   onPressed: () => addToCart(context),
-                  icon: Icon(Icons.add),
+                  icon: const Icon(Icons.add),
                 ),
               ),
             ],
